@@ -16,4 +16,9 @@ elif [ -n "$PRITUNL_MONGODB_URI_TEMPLATE" ]; then
   pritunl set-mongodb "$(eval echo -n "$PRITUNL_MONGODB_URI_TEMPLATE")"
 fi
 
+pritunl set app.server_port 80
+pritunl set app.redirect_server false
+pritunl set app.server_ssl false
+pritunl set app.reverse_proxy false
+
 exec "$@"
